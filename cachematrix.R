@@ -1,3 +1,9 @@
+## This function provides functions to a particualar:
+## - set - it sets the cache for the matrix
+## - get - it gets the cache of a matrix
+## - set - it sets matrix's inverse
+## - get - it gests the inverse of the matrix
+
 makeCacheMatrix <- function(x = matrix()) {
 inv <- NULL
 set <- function(y) {
@@ -11,6 +17,8 @@ inv <<- NULL
 
   }		  
 
+
+#The following fucntion createse the inverse of a matrix based on the fuction written above
 cacheSolve <- function(x, ...) {
   inv <- x$getinv()
   if(!is.null(inv)) {
@@ -23,7 +31,7 @@ cacheSolve <- function(x, ...) {
 }
 
 
-#TEST
+#TEST (in this test there check of written code, which shows that it works)
 hg <- matrix(rnorm(49),7,7)
 test <- makeCacheMatrix(hg)
 cacheSolve(test)
